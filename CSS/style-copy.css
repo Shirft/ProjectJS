@@ -1,0 +1,101 @@
+/*scrollbar*/
+body::-webkit-scrollbar{
+    width: 8px;
+}
+body::-webkit-scrollbar-thumb{
+    background: #8e5445;
+    border-radius: 5px;
+}
+                /*sections html*/
+/*slider index color button*/
+.carousel-dark .carousel-indicators [data-bs-target]{
+    background-color: #8e5445;
+}
+/*div promociones*/
+.content_prom h2{
+    text-align: center;
+}
+.content_prom a{
+ padding-top: 0.5rem;
+}
+.content_prom img:hover{
+    box-shadow: 10px 25px 30px black;
+    transition: 0.5s;
+}
+
+/*texto de quienes somos*/
+#content_quienessomos p{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-style: oblique;
+    border: 5px groove #eeac99;
+    width: 65%;
+    height: 50%;
+    font-size: 25px;
+    color: #ffece6;
+    -webkit-text-stroke: 0.5px #8e5445;
+    background-color: silver;
+    text-align: center;
+}
+
+/*Productos - Ver todo*/
+.content_prod{
+    padding: 2%;
+    border: #8e5445 groove;
+    border-radius: 2%;
+    margin: 1%;
+    height: 10%;
+}
+.content_tabla .content_prod:hover{
+    box-shadow: 10px 10px 20px black;
+    transition: 0.5s;
+}    
+
+/*Ofertas/promociones*/
+.content_flex_ofertas>div, .content_prod{
+    border-radius: 2%;
+    text-align: center;
+    padding: 1%;
+    border: #8e5445 groove;
+    margin: 1% 1% 2% 4%;
+    
+}
+.content_flex_ofertas>div:hover{
+    box-shadow: 10px 10px 20px black;
+    transition: 0.5s;
+}
+
+/*Ayuda*/
+.formulario{
+    padding:2% 10% 5% 5%;
+    margin: 0;
+}
+#inputState{
+    width: 50%;
+}
+
+/*max query*/
+@media screen and (max-width: 574px){
+    .content_prom, .content_ofertas, .content_tabla{
+        padding: 2% 0 2% 5%;
+    }
+    .content_ofertas, .container, #content_quienessomos{
+        width: 70%; 
+    }
+    .content_flex_ofertas>div:hover{
+        box-shadow: 0px 5px 10px black;
+        transition: 0.5s;
+    }
+    .content_tabla .content_prod:hover{
+        box-shadow: 0px 5px 10px black;
+        transition: 0.5s;
+    }  
+    .carousel-inner button span{
+        display: none;
+    }
+    section .content_titulo, .titulo_Central{
+        font-size: 30px;
+    }
+    .content_slider{
+        margin: 0;
+    }
+}

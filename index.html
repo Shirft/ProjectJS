@@ -1,12 +1,152 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="description" content="Dessins Art es un emprendimiento que elabora productos artesanales 100% pintados a mano">
+    <meta name="keywords" content="Dessins Art, Art, Arte, Productos, Artesanal, pintado, cuadros, mates, personalizados, anime">
+    <link rel="shorcut icon" href="./Img/logo.png">
+    <!--bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">    
+    <link rel="stylesheet" href="./CSS/style.css">
+    <link rel="stylesheet" href="./CSS/style-copy.css">
+    <title>Dessins Art - Productos Artesanales</title>
 </head>
 <body>
-    <script src="index.js"></script>
+  <!--header, encabezado de la pagina-->
+  <header>
+    <div class="header">
+      <nav class="navbar navbar-expand-lg nav-fill">
+        <div class="container"> 
+          <a class="navbar-brand" href="./index.html" title="Enlace al inicio Dessins Art"><img src="./Img/logo.png" alt="Imagen Dessins Art"/></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="barra desplegable">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse align-self-end" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="./index.html" title="Enlace al inicio de la pagina">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./index.html#content_quienessomos" title="Enlace a Quienes somos">Quienes somos</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" title="Enlace a Productos">
+                  Productos
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item sub" href="./Cuadros.html" title="Enlace a seccion cuadros">Cuadros</a></li>
+                  <li><a class="dropdown-item sub" href="./Mates.html" title="Enlace a seccion mates">Mates</a></li>
+                  <li><a class="dropdown-item sub" href="./Productos.html" title="Enlace a ver todas las secciones">Ver todo</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./Ofertas.html" title="Enlace a Ofertas y promociones">Ofertas/Promociones</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./Ayuda.html" title="Enlace al formulario de ayuda">Ayuda</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Producto" aria-label="Search">
+              <button class="btn btn-outline-success button" type="submit" title="Buscar">Buscar</button>
+            </form>
+          </div>
+        </div>
+      </nav>                      
+    </div>  
+  </header>
+    <!--Section, parte central de la pagina-->
+    <section>
+        <div class="container">
+            <div class="row justify-content-center content_slider">
+                <div class="col-10">
+                    <h1 class="titulo_Central text-center">¡Personalizados más solicitados!</h1>
+                    <div id="Slider" class="carousel slide content_img_slider carousel-dark" data-bs-ride="carousel">
+                      <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#Slider" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#Slider" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                      </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active" data-bs-interval="5000">
+                                <a href="./Cuadros.html"><img src="./Img/cuadrokakashi.png" class="d-block w-100" alt="Cuadro gai y kakashi" title="Cuadro kakashi y gai Naruto"/></a>
+                            </div>
+                            <div class="carousel-item" data-bs-interval="5000">
+                                <a href="./Mates.html"><img src="./Img/vasogojo2.png" class="d-block w-100" alt="mate gojo" title="Mate gojo jujutsu kaisen"/></a>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#Slider" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#Slider" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>        
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container content_prom">
+            <h2 class="content_titulo">Promociones</h2>
+            <div class="row justify-content-center">
+                <a class="col-lg-4 col-md-6 col-sm-12" href="./Ofertas.html"><img class="col-12" src="./Img/levi.png" alt="promo cuadro de levi" title="promo cuadro de levi"/></a>  
+                <a class="col-lg-4 col-md-6 col-sm-12" href="./Ofertas.html"><img class="col-12" src="./Img/megumi.png" alt="promo cuadro de megumi" title="promo cuadro de megumi"/></a>      
+                <a class="col-lg-4 col-md-6 col-sm-12" href="./Ofertas.html"><img class="col-12" src="./Img/pain.png" alt="promo cuadro de pain" title="promo cuadro de pain"/></a> 
+            </div>
+        </div>
+        <article id="content_quienessomos">
+            <h2 class="content_titulo">Quienes somos</h2>
+            <p>" Somos un pequeño emprendimiento en crecimiento de diseño y arte,
+                nos dedicamos a pintar mates y cuadros con temática de anime, entre otras
+                cosas<img src="./Img/favicon.png"/>obvio, tambien realizamos personalizados. "
+            </p>
+        </article>
+    </section>
+    <!--footer, pie de pagina-->
+    <footer>
+        <div class="container-fluid text-center footer">
+            <nav class="footer_flex row justify-content-start">
+                <div class="item_flex_contacto col-lg-2">
+                    <p class="col-12">
+                        Contacto:
+                        dessinsart21@gmail.com
+                    </p>
+                </div>
+                <div class="item_flex_informacion col-lg-8">
+                    <div class="accordion accordion-flush" id="accordionExample">
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                <div>Más Información</div> 
+                            </button>
+                          </h2>
+                          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <div>
+                                    Copyright Dessins Art - 2022. Todos los derechos reservados. Defensa de las y los consumidores.
+                                </div>
+                                <div>
+                                    Para reclamos <a href="https://autogestion.produccion.gob.ar/consumidores" target="_blank">ingrese aqui</a>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer_social col-lg-2">
+                    <p>Seguinos en:</p>
+                    <a href="https://wa.me/541126339842" class="col-6" target="_blank"><img class="col-12" src="./Img/whatsapp.png" alt="Whatsapp" title="Whatsapp"></a>
+                    <a href="https://www.instagram.com/dessins_artt/" class="col-6" target="_blank"><img class="col-12" src="./Img/instagram.png" alt="Instagram" title="Instagram"></a>
+                </div>  
+            </nav>  
+        </div>
+    </footer>
+<!--script bootstrap-->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+<!--scrip proyecto-->
+<script src="../Proyecto JS/index.js"></script>
 </body>
 </html>
