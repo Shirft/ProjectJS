@@ -52,3 +52,5 @@ function Compra(produc){
 Bienvenido();
 let producto=parseInt(prompt('Ingrese numero de producto que desea comprar: 1-Cuadro(Precio: $1.200) 2-Mate(Precio:$1.000) 3-promoción(Precio:$800) - Caso contrario presione 0 para salir'));
 Compra(producto);
+let precio=document.querySelector(".precio");
+precio.innerText="$ 1.400";
