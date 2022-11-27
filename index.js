@@ -92,6 +92,7 @@ function AsignacionM(Produc1, prec1){
         Prodcl1.forEach(element =>{
             Precios1[i].innerText=`Precio: $ ${element.precio}`;
             Precios1[i].setAttribute("value", element.precio);
+            Precios1[i].setAttribute("title", element.nombreP);
             i++;
         });
     } 
@@ -108,6 +109,7 @@ function AsignacionC(Produc2, prec2, prec3){
         Prodcl2.forEach(element =>{
             Precios2[i].innerText=`Precio: $ ${element.precio}`;
             Precios2[i].setAttribute("value", element.precio);
+            Precios2[i].setAttribute("title", element.nombreP)
             i++;
         });       
     }
@@ -121,6 +123,7 @@ function AsignacionC(Produc2, prec2, prec3){
         Prodcl3.forEach(element =>{
             Precios3[i].innerText=`Precio: $ ${element.precio}`;
             Precios3[i].setAttribute("value", element.precio);
+            Precios3[i].setAttribute("title", element.nombreP)
             i++;
         });
     }
@@ -128,17 +131,17 @@ function AsignacionC(Produc2, prec2, prec3){
 
 
 //Agisnacion precios
-const Mate1=new Producto("precio-mate", "wolverine", "1.400,00");
-const Mate2=new Producto("precio-mate", "spiderman", "1.400,00");
-const Mate3=new Producto("precio-mate", "madre/hija", "1.200,00");
-const Mate4=new Producto("precio-mate", "kakashi", "1.400,00");
-const Mate5=new Producto("precio-mate", "gojo", "1.500,00");
-const Cuadro1=new Producto("precio-cuadro", "Naruto", "600,00");
-const Cuadro2=new Producto("precio-cuadro", "Shoto", "600,00");
-const Cuadro3=new Producto("precio-cuadro", "kakashi", "1.600,00");
-const Oferta1=new Producto("precio-oferta", "levi", "1.400,00");
-const Oferta2=new Producto("precio-oferta", "megumi", "2.100,00");
-const Oferta3=new Producto("precio-oferta", "pain", "2.600,00");
+const Mate1=new Producto("precio-mate", "Mate de wolverine", 1400,00);
+const Mate2=new Producto("precio-mate", "Mate de spiderman", 1400,00);
+const Mate3=new Producto("precio-mate", "Mate de madre/hija", 1200,00);
+const Mate4=new Producto("precio-mate", "Mate de kakashi", 1400,00);
+const Mate5=new Producto("precio-mate", "Mate de gojo", 1400,00);
+const Cuadro1=new Producto("precio-cuadro", "Cuadro de Naruto", 600,00);
+const Cuadro2=new Producto("precio-cuadro", "Cuadro de Shoto", 600,00);
+const Cuadro3=new Producto("precio-cuadro", "Cuadro de kakashi y gai", 1200,00);
+const Oferta1=new Producto("precio-oferta", "Promo cuadro de levi", 1400,00);
+const Oferta2=new Producto("precio-oferta", "Promo cuadro de megumi", 2100,00);
+const Oferta3=new Producto("precio-oferta", "Promo cuadro de pain", 2600,00);
 
 let ProductosM=[Mate1, Mate2, Mate3, Mate4, Mate5, Cuadro1, Cuadro2, Cuadro3, Oferta1, Oferta2, Oferta3];
 
@@ -153,14 +156,31 @@ if(document.querySelector(".precio-mate")!=null && document.querySelector(".prec
 }
 //Asignacion id
 addID(".precio-mate", ".precio-cuadro", ".precio-oferta");
-//Agregar id button comprar
-/*let buttonComprar=document.querySelectorAll("body .btn-success");
-let btnPrecio=document.querySelectorAll(".precio")
-let cont=0;
-buttonComprar.forEach(element=>{
-    element.onclick=()=>{
 
-        total=+total;
-        localStorage.setItem("Precio total", total);
+//Agregar evento onclick button comprar
+let buttonComprar=document.querySelectorAll("body .btn-success");
+let btnPrecio=document.querySelectorAll(".precio")
+let c=0;
+let totl=[ ];
+let tot=0;
+for(const property of buttonComprar){
+    let total=parseInt(btnPrecio[c].getAttribute('value'));
+    let titulo=btnPrecio[c].getAttribute("title");
+    const compra={
+        Producto:titulo,
+        precio:total
     }
-});*/
+    //property.setAttribute("onclick", "localStorage.setItem('Compra','"+JSON.stringify(compra)+"'); localStorage.setItem('Monto total','"+compra.precio+"'); "+totl.push(compra.precio)+"");
+    //property.setAttribute("onclick", "console.log('"+acumular(total, totl)+"')");
+    property.onclick=()=>{
+        localStorage.setItem('Compra',JSON.stringify(compra));
+        totl.push(titulo);
+        localStorage.setItem('Productos',totl);
+        tot+=total
+        localStorage.setItem('Monto total',tot);
+        console.log("Productos Adquiridos ahsta el momento: "+ localStorage.getItem("Productos"))
+        console.log("Monto acumulado hasta el momento: $"+localStorage.getItem("Monto total"))
+    }
+    c++;
+}
+
