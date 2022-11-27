@@ -53,6 +53,7 @@ Bienvenido();
 let producto=parseInt(prompt('Ingrese numero de producto que desea comprar: 1-Cuadro(Precio: $1.200) 2-Mate(Precio:$1.000) 3-promoción(Precio:$800) - Caso contrario presione 0 para salir'));
 Compra(producto);*/
 
+//clases y funciones
 class Producto{
     constructor(id, nombreP, precio){
         this.id=id,
@@ -60,26 +61,26 @@ class Producto{
         this.precio=precio;
     }
 }
-function addID(div1, div2, div3, name){
+function addID(div1, div2, div3){
     let precio1=document.querySelectorAll(div1)
     let precio2=document.querySelectorAll(div2)
     let precio3=document.querySelectorAll(div3)
-    let num=1;
+    num=0;
     precio1.forEach(prod => {
-        prod.setAttribute("id", "Precio"+num);
+        prod.setAttribute("class", precio1[num].getAttribute("class")+" precio");
         num++;
     });
+    num=0;
     precio2.forEach(prod => {
-        prod.setAttribute("id", "Precio"+num);
+        prod.setAttribute("class", precio2[num].getAttribute("class")+" precio");
         num++;
     });
+    num=0;
     precio3.forEach(prod => {
-        prod.setAttribute("id", "Precio"+num);
+        prod.setAttribute("class", precio3[num].getAttribute("class")+" precio");
         num++;
     });
 }
-
-addID(".precio-mate", ".precio-cuadro", ".precio-oferta");
 
 function AsignacionM(Produc1, prec1){
     let i=0;
@@ -90,19 +91,23 @@ function AsignacionM(Produc1, prec1){
     if(Prodcl1!=null){
         Prodcl1.forEach(element =>{
             Precios1[i].innerText=`Precio: $ ${element.precio}`;
+            Precios1[i].setAttribute("value", element.precio);
             i++;
         });
     } 
 }
+
 function AsignacionC(Produc2, prec2, prec3){
-    let i=0;
+
     let Precio2 = document.querySelector(prec2);
     let Precios2 = document.querySelectorAll(prec2);
     let getclass2=Precio2.getAttribute("class")
     let Prodcl2=Produc2.filter(elm=>elm.id==getclass2)
     if(Precio2!=null){
+        let i=0;        
         Prodcl2.forEach(element =>{
             Precios2[i].innerText=`Precio: $ ${element.precio}`;
+            Precios2[i].setAttribute("value", element.precio);
             i++;
         });       
     }
@@ -115,19 +120,22 @@ function AsignacionC(Produc2, prec2, prec3){
         i=0;
         Prodcl3.forEach(element =>{
             Precios3[i].innerText=`Precio: $ ${element.precio}`;
+            Precios3[i].setAttribute("value", element.precio);
             i++;
         });
     }
 }
 
+
+//Agisnacion precios
 const Mate1=new Producto("precio-mate", "wolverine", "1.400,00");
 const Mate2=new Producto("precio-mate", "spiderman", "1.400,00");
 const Mate3=new Producto("precio-mate", "madre/hija", "1.200,00");
 const Mate4=new Producto("precio-mate", "kakashi", "1.400,00");
-const Mate5=new Producto("precio-mate", "gojo", "1.400,00");
+const Mate5=new Producto("precio-mate", "gojo", "1.500,00");
 const Cuadro1=new Producto("precio-cuadro", "Naruto", "600,00");
 const Cuadro2=new Producto("precio-cuadro", "Shoto", "600,00");
-const Cuadro3=new Producto("precio-cuadro", "kakashi", "1.200,00");
+const Cuadro3=new Producto("precio-cuadro", "kakashi", "1.600,00");
 const Oferta1=new Producto("precio-oferta", "levi", "1.400,00");
 const Oferta2=new Producto("precio-oferta", "megumi", "2.100,00");
 const Oferta3=new Producto("precio-oferta", "pain", "2.600,00");
@@ -143,3 +151,16 @@ if(document.querySelector(".precio-mate")!=null && document.querySelector(".prec
 }else{
     AsignacionM(ProductosM, ".precio-oferta");
 }
+//Asignacion id
+addID(".precio-mate", ".precio-cuadro", ".precio-oferta");
+//Agregar id button comprar
+/*let buttonComprar=document.querySelectorAll("body .btn-success");
+let btnPrecio=document.querySelectorAll(".precio")
+let cont=0;
+buttonComprar.forEach(element=>{
+    element.onclick=()=>{
+
+        total=+total;
+        localStorage.setItem("Precio total", total);
+    }
+});*/
