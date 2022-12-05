@@ -24,14 +24,17 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse align-self-end" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 col-lg-12">
               <li class="nav-item">
                 <a class="nav-link" aria-current="page" href="./index.html" title="Enlace al inicio de la pagina">Inicio</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="./index.html#content_quienessomos" title="Enlace a Quienes somos">Quienes somos</a>
               </li>
-              <li class="nav-item dropdown">
+              <li class="nav-item">
+                <a class="nav-link" href="./Productos.html" title="Enlace a Productos">Productos</a>
+              </li>
+              <!--<li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" title="Enlace a Productos">
                   Productos
                 </a>
@@ -46,12 +49,12 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="./Ayuda.html" title="Enlace al formulario de ayuda">Ayuda</a>
-              </li>
+              </li>-->
             </ul>
-            <form class="d-flex" role="search">
+            <!--<div class="d-flex" role="search">
               <input class="form-control me-2" type="search" placeholder="Producto" aria-label="Search">
               <button class="btn btn-outline-success button" type="submit" title="Buscar">Buscar</button>
-            </form>
+            </div>-->
           </div>
         </div>
       </nav>                      
@@ -60,55 +63,85 @@
   <!--Section, parte central de la pagina-->
   <section class="tabla">
     <div class="container">
+      <h2 class="titulo_cuadros text-center">Mates y Cuadros</h2>
       <div class="row content_tabla justify-content-center">
         <div class="col-lg-3 col-md-6 col-sm-12 content_prod text-center">
           <h3>Mate wolverine</h3>
           <img class="col-12" src="./Img/vasologan.png" alt="Mate de wolverine" title="Mate de wolverine">
           <div class="precio-mate">Precio: $1.400,00</div>
-          <button type="button" class="btn btn-success col-12">Comprar</button>
+          <button type="button" class="btn btn-success col-12">Agregar al carrito</button>
         </div>
         <div class="col-lg-3 col-md-6 col-sm-12 content_prod text-center">
           <h3>Mate spiderman</h3>
           <img class="col-12" src="./Img/spiderman.png" alt="Mate de spiderman" title="Mate de spiderman">
           <div class="precio-mate">Precio: $1.400,00</div>
-          <button type="button" class="btn btn-success col-12">Comprar</button>
+          <button type="button" class="btn btn-success col-12">Agregar al carrito</button>
         </div>
         <div class="col-lg-3 col-md-6 col-sm-12 content_prod text-center">
           <h3>Mate madre</h3>
           <img class="col-12" src="./Img/madre.png" alt="Mate madre e hija" title="Mate madre e hija">
           <div class="precio-mate">Precio: $1.200,00</div>
-          <button type="button" class="btn btn-success col-12">Comprar</button>
+          <button type="button" class="btn btn-success col-12">Agregar al carrito</button>
         </div>
         <div class="col-lg-3 col-md-6 col-sm-12 content_prod text-center">
           <h3>Mate kakashi</h3>
           <img class="col-12" src="./Img/vasokakashi.png" alt="Mate de kakashi" title="Mate de kakashi">
           <div class="precio-mate">Precio: $1.400,00</div>
-          <button type="button" class="btn btn-success col-12">Comprar</button>
+          <button type="button" class="btn btn-success col-12">Agregar al carrito</button>
         </div>
         <div class="col-lg-3 col-md-6 col-sm-12 content_prod text-center">
           <h3>Mate gojo</h3>
           <img class="col-12" src="./Img/vasogojo1.png" alt="Mate de gojo" title="Mate de gojo">
           <div class="precio-mate">Precio: $1.400,00</div>
-          <button type="button" class="btn btn-success col-12">Comprar</button>
+          <button type="button" class="btn btn-success col-12">Agregar al carrito</button>
         </div>
         <div class="col-lg-3 col-md-6 col-sm-12 content_prod text-center">
           <h3>Cuadro Naruto</h3>
           <img class="col-12" src="./Img/cuadronaruto1.png" alt="Cuadro de naruto" title="Cuadro de naruto">
           <div class="precio-cuadro">Precio: $600,00</div>
-          <button type="button" class="btn btn-success col-12">Comprar</button>
+          <button type="button" class="btn btn-success col-12">Agregar al carrito</button>
         </div>
        <div class="col-lg-3 col-md-6 col-sm-12 content_prod text-center">
           <h3>Cuadro shoto</h3>
           <img class="col-12" src="./Img/cuadroshoto1.png" alt="cuadro de shoto" title="Cuadro de shoto">
           <div class="precio-cuadro">Precio: $600,00</div>
-          <button type="button" class="btn btn-success col-12">Comprar</button> 
+          <button type="button" class="btn btn-success col-12">Agregar al carrito</button> 
         </div>
         <div class="col-lg-3 col-md-6 col-sm-12 content_prod text-center">
           <h3>Cuadro kakashi</h3>
           <img class="col-12" src="./Img/cuadrokakashiygai1.png" alt="Cuadro de kakashi/gai" title="Cuadro de kakashi/gai">
           <div class="precio-cuadro">Precio: $1.200,00</div>
-          <button type="button" class="btn btn-success col-12">Comprar</button> 
+          <button type="button" class="btn btn-success col-12">Agregar al carrito</button> 
         </div>
+      </div>
+      <h2 class="content_titulo_ofertas text-center">Promociones</h2>
+      <div class="row content_flex_ofertas justify-content-center">
+        <div class="content_ofertas col-lg-3 col-md-6 col-sm-10">
+          <h3>Promo 1</h3>
+          <img class="col-12" src="./Img/levi.png" alt="Promo cuadro de levi" title="Promo cuadro de levi"/>
+          <div class="precio-oferta">Precio: $1.400,00</div>
+          <button type="button" class="btn btn-success col-12">Agregar al carrito</button>
+        </div>
+        <div class="content_ofertas col-lg-3 col-md-6 col-sm-10">
+          <h3>Promo 2</h3>
+          <img class="col-12" src="./Img/megumi.png" alt="Promo cuadro de megumi" title="Promo cuadro de megumi"/>
+          <div class="precio-oferta">Precio: $2.100,00</div>
+          <button type="button" class="btn btn-success col-12">Agregar al carrito</button>
+        </div>
+        <div class="content_ofertas col-lg-3 col-md-6 col-sm-10">
+          <h3>Promo 3</h3>
+          <img class="col-12" src="./Img/pain.png" alt="Promo cuadro de pain" title="Promo cuadro de pain"/>
+          <div class="precio-oferta">Precio: $2.600,00</div>
+          <button type="button" class="btn btn-success col-12">Agregar al carrito</button>
+        </div>
+      </div>  
+      <h2 class="content_titulo_ofertas text-center">Carrito</h2>
+      <div class="row content_flex_ofertas justify-content-center carrito">
+
+      </div>
+      <div class="card justify-content-between align-items-center">
+        <div id="total">Total:</div>
+        <button class="btn btn-success col-6" id="Compras">Comprar</button>
       </div>
     </div> 
   </section>
