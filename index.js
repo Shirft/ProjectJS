@@ -184,17 +184,18 @@ button1.addEventListener("click", filtro);
     const Pnombres=JSON.parse(localStorage.getItem("producto")) || [];
     const valores=JSON.parse(localStorage.getItem("valores")) || [];
     let totl;
-    if(JSON.parse(localStorage.getItem("monto"))){
-        totl=JSON.parse(localStorage.getItem("monto"));
-        divTotal.innerText=`Total: $${totl}`
-        let car=JSON.parse(localStorage.getItem("carrito"))
-        console.log(car)
-        for (const ca of car) {
-            addCarr(ca.nombre, ca.precio, totl)
+    if(divTotal!=null){
+        if(JSON.parse(localStorage.getItem("monto"))){
+            totl=JSON.parse(localStorage.getItem("monto"));
+            divTotal.innerText=`Total: $${totl}`
+            let car=JSON.parse(localStorage.getItem("carrito"))
+            for (const ca of car) {
+                addCarr(ca.nombre, ca.precio, totl)
+            }
+        }else{
+            totl=0;
+            divTotal.innerText=`Total: $${totl}`
         }
-    }else{
-        totl=0;
-        divTotal.innerText=`Total: $${totl}`
     }
     buttonComprar.forEach((boton)=>{
         boton.onclick =()=>{
@@ -258,7 +259,10 @@ function removeItem(event){
     }
 }
 let butonFinalizar=document.querySelector("#Compras");
-butonFinalizar.addEventListener("click", botonFinalizar);
+if(butonFinalizar){
+    butonFinalizar.addEventListener("click", botonFinalizar);
+}
+
 
 function botonFinalizar(){
     if(totl>0){
