@@ -99,3 +99,60 @@ body::-webkit-scrollbar-thumb{
         margin: 0;
     }
 }
+/*swall button*/
+.swal-button{
+    background-color: #8e5445;
+}
+.swal-button:hover{
+    background-color: #ad7060;
+}
+
+/*total*/
+.carta{
+    padding-bottom: 4%;
+}
+#total{
+    text-align: left;
+}
+.header{
+    padding-bottom: 0.2%;
+}
+.btn-primary{
+    --bs-btn-bg:#8e5445;
+    --bs-btn-border-color:none;
+    --bs-btn-hover-bg: #ad7060;
+    --bs-btn-hover-border-color: none;
+    --bs-btn-active-bg: #8e5445;
+    --bs-btn-active-border-color: none;
+    width: 5%;
+}
+
+/*header fixed*/
+header{
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+}
+section{
+    padding-top: 10%;
+}
+/*offcanvas*/
+.offcanvas.offcanvas-end{
+    top:19.2%;
+}
+.cantidad{
+    border-radius: 50%;
+    background-color: red;
+    position: absolute;
+    width: 1.5%;
+}
+.finalizacion{
+    padding-top: 2%;
+    padding-bottom: 5%;
+}
+form .buttonsF{
+    padding-top: 2%;
+}
+#FinalizacionCompra{
+    padding-left: 20%;
+}

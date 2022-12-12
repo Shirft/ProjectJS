@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es-US">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Dessins Art es un emprendimiento que elabora productos artesanales 100% pintados a mano">
+        <meta name="keywords" content="Dessins Art, Art, Arte, Productos, Artesanal, pintado, cuadros, mates, personalizados, anime">
+        <link rel="shorcut icon" href="./Img/logo.png">
+        <!--bootstrap-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">    
+        <link rel="stylesheet" href="./CSS/style.css">
+        <link rel="stylesheet" href="./CSS/style-copy.css">
+        <title>Dessins Art - Productos Artesanales</title>
+    </head>
+    <body>
+        <!--header, encabezado de la pagina-->
+        <header>
+            <div class="header">
+            <nav class="navbar navbar-expand-lg nav-fill">
+                <div class="container"> 
+                <a class="navbar-brand" href="./index.html" title="Enlace al inicio Dessins Art"><img src="./Img/logo.png" alt="Imagen Dessins Art"/></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="barra desplegable">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse align-self-end" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 col-lg-12">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="./index.html" title="Enlace al inicio de la pagina">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./index.html#content_quienessomos" title="Enlace a Quienes somos">Quienes somos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./productos.html" title="Enlace a Productos">Productos</a>
+                    </li>
+                    <!--<li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" title="Enlace a Productos">
+                        Productos
+                        </a>
+                        <ul class="dropdown-menu">
+                        <li><a class="dropdown-item sub" href="./Cuadros.html" title="Enlace a seccion cuadros">Cuadros</a></li>
+                        <li><a class="dropdown-item sub" href="./Mates.html" title="Enlace a seccion mates">Mates</a></li>
+                        <li><a class="dropdown-item sub" href="./Productos.html" title="Enlace a ver todas las secciones">Ver todo</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./Ofertas.html" title="Enlace a Ofertas y promociones">Ofertas/Promociones</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./Ayuda.html" title="Enlace al formulario de ayuda">Ayuda</a>
+                    </li>-->
+                    </ul>
+                    <!--<div class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Producto" aria-label="Search">
+                    <button class="btn btn-outline-success button" type="submit" title="Buscar">Buscar</button>
+                    </div>-->
+                </div>
+                </div>
+            </nav>                      
+            </div>  
+        </header>
+        <!--Section, parte central de la pagina-->
+        <section>
+            <div class="container">
+                <div class="row finalizacion">
+                    <h2 class="col-lg-12 text-center">Finalización de la compra</h2>
+                    <hr>
+                    <div class="col-lg-6 comprado">
+                        
+                        <div class="col-lg-12 montototal text-center">
+                            <div class="col-lg-12">total:</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 lista">
+                        <h3 class="col-lg-12 text-center">Datos personales</h3>
+                        <form onsubmit="return false" id="FinalizacionCompra">
+                            <div class="col-lg-8 col-md-6 col-sm-12">
+                                <label for="inputNomApe4" class="form-label">Nombre y Apellido</label>
+                                <input type="text" class="form-control" id="inputNomApe4">
+                              </div>
+                              <div class="col-lg-8 col-md-6 col-sm-12">
+                                <label for="inputEmail4" class="form-label">E-mail</label>
+                                <input id="mail" type="email" class="form-control" id="inputEmail4">
+                              </div>
+                              <div class="col-lg-8 col-md-6 col-sm-12">
+                                <label for="inputTel" class="form-label">Télefono de contacto</label>
+                                <input type="tel" class="form-control" id="inputTel" placeholder="+54911">
+                              </div>
+                              <div class="col-lg-8 col-md-6 col-sm-12">
+                                <label for="inputAddress" class="form-label">Dirección</label>
+                                <input type="text" class="form-control" id="inputAddress" placeholder="calle 2255, localidad">
+                              </div>
+                              <div class="col-lg-8 col-md-6 col-sm-12">
+                                <label for="inputCity" class="form-label">Partido</label>
+                                <input type="text" class="form-control" id="inputCity">
+                              </div>
+                              <div class="col-12 buttonsF">
+                                <button type="reset" class="btn btn-success" title="Limpiar datos ingresados">Limpiar</button>
+                                <button type="submit" class="btn btn-success" title="Enviar datos ingresados" id="FinCompra">Finalizar compra</button>
+                              </div>
+                        </form>
+                    </div>
+                </div>
+            </div>    
+        </section>
+        <!--footer, pie de pagina-->
+        <footer>
+            <div class="container-fluid text-center footer">
+                <nav class="footer_flex row justify-content-start">
+                    <div class="item_flex_contacto col-lg-2">
+                        <p class="col-12">
+                            Contacto:
+                            dessinsart21@gmail.com
+                        </p>
+                    </div>
+                    <div class="item_flex_informacion col-lg-8">
+                        <div class="accordion accordion-flush" id="accordionExample">
+                            <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                    <div>Más Información</div> 
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <div>
+                                        Copyright Dessins Art - 2022. Todos los derechos reservados. Defensa de las y los consumidores.
+                                    </div>
+                                    <div>
+                                        Para reclamos <a href="https://autogestion.produccion.gob.ar/consumidores" target="_blank">ingrese aqui</a>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer_social col-lg-2">
+                        <p>Seguinos en:</p>
+                        <a href="https://wa.me/541126339842" class="col-6" target="_blank"><img class="col-12" src="./Img/whatsapp.png" alt="Whatsapp" title="Whatsapp"></a>
+                        <a href="https://www.instagram.com/dessins_artt/" class="col-6" target="_blank"><img class="col-12" src="./Img/instagram.png" alt="Instagram" title="Instagram"></a>
+                    </div>  
+                </nav>  
+            </div>
+        </footer>
+        <!--script bootstrap-->
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+        <!--script libreria y proyecto-->
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script src="../Proyecto JS/index.js"></script>
+    </body>
+</html>
