@@ -1,0 +1,91 @@
+
+[
+    {
+        "id": 0,
+        "class": "precio-mate",
+        "nombreAlt": "Mate de wolverine",
+        "nombre": "Mate wolverine",
+        "precio": 1400,
+        "img": "vasologan.png"
+    },
+    {
+        "id": 1,
+        "class": "precio-mate",
+        "nombreAlt": "Mate de spiderman",
+        "nombre": "Mate spiderman",
+        "precio": 1400,
+        "img": "spiderman.png"
+    },
+    {
+        "id": 2,
+        "class": "precio-mate",
+        "nombreAlt": "Mate madre e hija",
+        "nombre": "Mate madre",
+        "precio": 1200,
+        "img": "madre.png"
+    },
+    {
+        "id": 3,
+        "class": "precio-mate",
+        "nombreAlt": "Mate de kakashi",
+        "nombre": "Mate kakashi",
+        "precio": 1400,
+        "img": "vasokakashi.png"
+    },
+    {
+        "id": 4,
+        "class": "precio-mate",
+        "nombreAlt": "Mate de gojo",
+        "nombre": "Mate gojo",
+        "precio": 1400,
+        "img": "vasogojo1.png"
+    },
+    {
+        "id": 5,
+        "class": "precio-cuadro",
+        "nombreAlt": "Cuadro de naruto",
+        "nombre": "Cuadro Naruto",
+        "precio": 600,
+        "img": "cuadronaruto1.png"
+    },
+    {
+        "id": 6,
+        "class": "precio-cuadro",
+        "nombreAlt": "Cuadro de shoto",
+        "nombre": "Cuadro Shoto",
+        "precio": 600,
+        "img": "cuadroshoto1.png"
+    },
+    {
+        "id": 7,
+        "class": "precio-cuadro",
+        "nombreAlt": "Cuadro de kakashi/gai",
+        "nombre": "Cuadro kakashi",
+        "precio": 1200,
+        "img": "cuadrokakashiygai1.png"
+    },
+    {
+        "id": 8,
+        "class": "precio-oferta",
+        "nombreAlt": "Promo cuadro de levi",
+        "nombre": "Promo 1",
+        "precio": 1400,
+        "img": "levi.png"
+    },
+    {
+        "id": 9,
+        "class": "precio-oferta",
+        "nombreAlt": "Promo cuadro de megumi",
+        "nombre": "Promo 2",
+        "precio": 2100,
+        "img": "megumi.png"
+    },
+    {
+        "id": 10,
+        "class": "precio-oferta",
+        "nombreAlt": "Promo cuadro de pain",
+        "nombre": "Promo 3",
+        "precio": 2600,
+        "img": "pain.png"
+    }
+]

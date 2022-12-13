@@ -246,18 +246,25 @@ function filtro(){
     }
 }
 
+const consultaProductos=()=>{
+    fetch("./productos.json")
+    .then(response=>response.json())
+    .then(productos=>console.log(productos))
+}
+consultaProductos();
+
 //Agisnacion precios
-const Mate1=new Producto(0, "precio-mate", "Mate de wolverine", 1400,00);
-const Mate2=new Producto(1, "precio-mate", "Mate de spiderman", 1400,00);
-const Mate3=new Producto(2, "precio-mate", "Mate de madre/hija", 1200,00);
-const Mate4=new Producto(3, "precio-mate", "Mate de kakashi", 1400,00);
-const Mate5=new Producto(4, "precio-mate", "Mate de gojo", 1400,00);
-const Cuadro1=new Producto(5, "precio-cuadro", "Cuadro de Naruto", 600,00);
-const Cuadro2=new Producto(6, "precio-cuadro", "Cuadro de Shoto", 600,00);
-const Cuadro3=new Producto(7, "precio-cuadro", "Cuadro de kakashi", 1200,00);
-const Oferta1=new Producto(8, "precio-oferta", "Promo 1", 1400,00);
-const Oferta2=new Producto(9, "precio-oferta", "Promo 2", 2100,00);
-const Oferta3=new Producto(10, "precio-oferta", "Promo 3", 2600,00);
+const Mate1=new Producto(0, "precio-mate", "Mate de wolverine", 1400);
+const Mate2=new Producto(1, "precio-mate", "Mate de spiderman", 1400);
+const Mate3=new Producto(2, "precio-mate", "Mate de madre/hija", 1200);
+const Mate4=new Producto(3, "precio-mate", "Mate de kakashi", 1400);
+const Mate5=new Producto(4, "precio-mate", "Mate de gojo", 1400);
+const Cuadro1=new Producto(5, "precio-cuadro", "Cuadro de Naruto", 600);
+const Cuadro2=new Producto(6, "precio-cuadro", "Cuadro de Shoto", 600);
+const Cuadro3=new Producto(7, "precio-cuadro", "Cuadro de kakashi", 1200);
+const Oferta1=new Producto(8, "precio-oferta", "Promo 1", 1400);
+const Oferta2=new Producto(9, "precio-oferta", "Promo 2", 2100);
+const Oferta3=new Producto(10, "precio-oferta", "Promo 3", 2600);
 
 const ProductosM=[Mate1, Mate2, Mate3, Mate4, Mate5, Cuadro1, Cuadro2, Cuadro3, Oferta1, Oferta2, Oferta3];
 
