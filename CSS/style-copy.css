@@ -43,7 +43,7 @@ body::-webkit-scrollbar-thumb{
     border: #8e5445 groove;
     border-radius: 2%;
     margin: 1%;
-    height: 10%;
+  /*  height: 10%;*/
 }
 .content_tabla .content_prod:hover{
     box-shadow: 10px 10px 20px black;
@@ -155,4 +155,15 @@ form .buttonsF{
 }
 #FinalizacionCompra{
     padding-left: 20%;
+}
+.loader {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: url('https://acegif.com/wp-content/uploads/loading-11.gif') 50% 50% no-repeat rgb(249,249,249);
+    opacity: .8;
+    display: none;
 }

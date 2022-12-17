@@ -8,6 +8,7 @@ class Producto{
         this.precio=precio;
     }
 }
+
 function addID(div1, div2, div3, button){
     let precio1=document.querySelectorAll(div1)
     let precio2=document.querySelectorAll(div2)
@@ -86,20 +87,23 @@ function addCarr(titulo, precio, total, cantidades){
     nudiv.setAttribute("style", "border:none");
     let div=`
     <div class="d-flex flex-row col-lg-12 col-md-12 col-sm-12 agregado">
-        <h7 class="col-lg-6 col-md-6 col-sm-6">${titulo}</h7>
+        <h7 class="col-lg-6 col-md-6 col-sm-6 titulos">${titulo}</h7>
         <div class="precio-oferta col-lg-4 col-md-4 col-sm-4">Precio: $${precio}</div>
-        <button type="button" class="btn btn-success col-lg-2 col-md-2 col-sm-2 delete">X</button>
+        <button type="button" class="btn btn-success col-lg-2 col-md-2 col-sm-2 text-center delete">X</button>
     </div>
+    <hr>
     `
     nudiv.innerHTML=div;
     divcarrito.append(nudiv)
 
     nudiv.querySelector(".delete").addEventListener("click", removeItem)
+    
     divTotal.innerText=`Total: $${total}`
     span.innerText=`${cantidades}`
     mostrarCompras();
     ocultarYmostrarP();
 }
+
 function finalizarCompra(title, cash, all){
     const nudiv2=document.createElement("div");
     nudiv2.setAttribute("class", "row justify-content-between align-items-center content_prod elegido")
@@ -116,6 +120,7 @@ function finalizarCompra(title, cash, all){
 
     montoT.innerText=`Total: $${all}`
 }
+
 function removeItem(event){
     const buttonRemoved=event.target;
     let h7 =buttonRemoved.closest(".elegido").querySelector("h7").textContent;
@@ -156,6 +161,14 @@ function mostrarCompras(){
     }
 }
 
+function cargar(){
+    let load=document.querySelector(".loader")
+    load.style.display="block";
+    $(window).load(function() {
+        $(".loader").fadeOut("slow");
+    });
+}
+
 function botonFinalizar(){
     let inputs=document.querySelectorAll("#FinalizacionCompra input")
     let mail=document.querySelector("#mail").value
@@ -163,13 +176,19 @@ function botonFinalizar(){
         if(totl>0 && inp.value!=""){
             swal("Compra realizada con exito!", "Monto gastado: $"+totl+"\n Se envio mail a "+mail+" para retiro de producto \n Muchas gracias!", "success", {closeOnEsc: false, button: "Aceptar", closeOnClickOutside: false,});
             document.querySelector(".swal-button").style.background="#8e5445";
+            document.querySelector(".swal-button--confirm").onclick=()=>{
+                setTimeout(function(){document.querySelector("#Productos").click(); 
+                localStorage.clear();
+            }, 1000)
+            cargar();
+            }
          }else{
             swal("Atención!", "Complete los campos faltantes para finalizar la compra", "info", {closeOnEsc: false, button: "Aceptar", closeOnClickOutside: false,});
             document.querySelector(".swal-button").style.background="#8e5445";
         }
     }
-
 }
+
 function ocultarYmostrarP(){
     let txtp=document.querySelector(".vacio");
     if(totl>0){
@@ -178,6 +197,7 @@ function ocultarYmostrarP(){
         txtp.innerText=`Sin productos agregados... Agrega algun producto que desees comprar`
     }
 }
+
 function botoncomprar(buttonss){
     buttonss.forEach((boton)=>{
         boton.onclick =()=>{
@@ -187,10 +207,12 @@ function botoncomprar(buttonss){
             const ProducCarrito={...seleccion}
             const indexCar=carrito.findIndex((carro)=>carro.id==ProducCarrito.id)
             //if(indexCar==-1){
-                carrito.push(ProducCarrito);
+               carrito.push(ProducCarrito);
            // }else{
            //     carrito[indexCar].cantidad++;
-           // }
+           //     carrito[indexCar].precio=ProducCarrito.precio*carrito[indexCar].cantidad;
+           //     ProducCarrito.cantidad=carrito[indexCar].cantidad
+            //}
             Pnombres.push(ProducCarrito.nombre)
             valores.push(ProducCarrito.precio)
             totl+=ProducCarrito.precio;
@@ -201,10 +223,11 @@ function botoncomprar(buttonss){
             localStorage.setItem("cantidad", JSON.stringify(canti))
             localStorage.setItem("monto", JSON.stringify(totl))
             addCarr(ProducCarrito.nombre, ProducCarrito.precio, totl, canti)
-            
+
         }
     })
 }
+
 function filtro(){
     if(input1.value!="" && input1.value!=" "){
         seccion.innerHTML=``;
@@ -246,14 +269,7 @@ function filtro(){
     }
 }
 
-const consultaProductos=()=>{
-    fetch("./productos.json")
-    .then(response=>response.json())
-    .then(productos=>console.log(productos))
-}
-consultaProductos();
-
-//Agisnacion precios
+//Agisnacion precios y generacion de array
 const Mate1=new Producto(0, "precio-mate", "Mate de wolverine", 1400);
 const Mate2=new Producto(1, "precio-mate", "Mate de spiderman", 1400);
 const Mate3=new Producto(2, "precio-mate", "Mate de madre/hija", 1200);
@@ -272,10 +288,10 @@ if(document.querySelector(".precio-mate")!=null){
     AsignacionC(ProductosM, ".precio-mate", ".precio-cuadro", ".precio-oferta");
 }
 
-//Asignacion id
+//Asignacion id y class producto y boton
 addID(".precio-mate", ".precio-cuadro", ".precio-oferta", "body .btn-success.col-12");
 
-//Agregar evento onclick button comprar
+//Agregar evento onclick buttons "agregar al carrito"
 let buttonComprar=document.querySelectorAll("body .btn-success.col-12");
 let btnPrecio=document.querySelectorAll(".precio");
 let divcarrito=document.querySelector(".offcanvas-body");
@@ -307,7 +323,7 @@ let canti=0;
     }
 botoncomprar(buttonComprar);
 
-//aparicion de boton comprar de carrito
+//aparicion de boton "comprar" de carrito
 let butonFinalizar=document.querySelector("#Compras");
 if(butonFinalizar){
     if(totl>0){
@@ -323,7 +339,7 @@ let button1=document.querySelector("#buscar");
 let seccion=document.querySelector(".tabla");
 let divs=document.querySelectorAll(".tabla .container");
 let article=document.querySelector(".tabla article");
-let contentProd=document.querySelectorAll("section .container>.row>div>h3");
+let contentProd=document.querySelectorAll("section .container>.row h3");
 
 if(button1){
     button1.addEventListener("click", filtro);
@@ -343,4 +359,21 @@ if(comprado){
         }
     }
     buttonF.addEventListener("click", botonFinalizar)
+}
+
+//formulario
+let miFormulario = document.querySelector('#inputTel');
+if(miFormulario){
+    miFormulario.addEventListener('keypress', function (em){
+        if (!soloNumeros(event)){
+          em.preventDefault();
+      }
+    })
+
+    //Solo permite introducir numeros.
+    function soloNumeros(em){
+        let key = em.charCode;
+        console.log(key);
+        return key >= 48 && key <= 57;
+    }
 }
